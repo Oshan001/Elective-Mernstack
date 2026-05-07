@@ -1,3 +1,4 @@
+// object is dictationary  in python
 let info = {
     name : "oshan",
     weight : 65,
