@@ -55,8 +55,7 @@ import mongoose from "mongoose"
 let app = express()
 app.listen(8000,()=>{
 console.log("application is listening at port 8000")
-mongoose.connect("mongodb://localhost:27017")
+mongoose.connect("mongodb://localhost:27017/cosmos")
 })
 app.use(json())   // make our backend to take data from postman
-app.use("/product", productRoutes)
 app.use('/user',userRoutes)
