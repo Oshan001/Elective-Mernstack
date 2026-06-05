@@ -1,17 +1,15 @@
 import { Router } from "express";
-import User from "../schema/userSchema.js";
+import School from "../schema/SchoolSchema.js";
 
-let userRoutes = Router()
-userRoutes
+const schoolSchema = Router()
+schoolSchema
 .route("/")
 .post(async(req , res , next) => {
-/* Send data form postman get data sent by  
-postman store data inuser table  */
 try {
-    let result = await User.create(req.body)
+    let result = await School.create(req.body)
     res.json({
     Success : true,
-    message : "User created sucesfully",
+    message : "School created sucesfully",
     result : result 
 })
 } catch (error) {
@@ -23,10 +21,10 @@ try {
 })
 .get(async(req , res , next) => {
 try {
-    let result = await User.find()
+    let result = await School.find()
     res.json({
     Success : true,
-    message : "User created sucesfully",
+    message : "School created sucesfully",
     result : result ,
 })
 } catch (error) {
@@ -37,15 +35,13 @@ try {
 }
 })
 
-
-
-userRoutes
+schoolSchema
 .route("/:id")
 .get(async(req , res , next) => {
    try {
-    let result = await User.findById(req.params.id)
+    let result = await School.findById(req.params.id)
      res.json({
-    message : "User created sucesfully",
+    message : "School created sucesfully",
     result : result
    })
    } catch (error) {
@@ -55,15 +51,11 @@ userRoutes
    })
    }
 })
-
-
-
-
 .patch(async(req , res , next) => {
    try {
-    let result = await User.findByIdAndUpdate(req.params.id,req.body)
+    let result = await School.findByIdAndUpdate(req.params.id,req.body)
      res.json({
-    message : "User update sucesfully",
+    message : "School update sucesfully",
     result : result
    })
    } catch (error) {
@@ -73,16 +65,11 @@ userRoutes
    })
    }
 })
-/* 
-User.create(req.body)
-User.find()
-
-*/
 .delete(async(req , res , next) => {
    try {
-    let result = await User.findByIdAndDelete(req.params.id)
+    let result = await School.findByIdAndDelete(req.params.id)
      res.json({
-    message : "User delete sucesfully",
+    message : "School delete sucesfully",
     result : result
    })
    } catch (error) {
@@ -92,13 +79,5 @@ User.find()
    })
    }
 })
-export default userRoutes
 
-
-/* 
-User.create(req.body)
-User.find()
-User.findById(req.params.id)
-User.findByIdAndUpdate(req.params.id,req.body)
-User.findByIdAndDelete(req.params.id)
-*/
+export default schoolSchema

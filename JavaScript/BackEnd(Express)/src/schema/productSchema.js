@@ -16,5 +16,5 @@ let porductSchema = Schema({
         type: String,
     },
 })
-let porductSchema = model("product", porductSchema)
+let Product = model("Product",porductSchema) 
 export default  Product
