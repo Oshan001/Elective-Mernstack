@@ -1,3 +1,8 @@
+import Address from "../Address"
+import Father from "./Father"
+import Information from "./Information"
+import Mother from "./Mother"
+
 const App = () => {
   let name = "Oshan"
   let surname = "Bajracharya"
@@ -12,7 +17,7 @@ const App = () => {
 
 let users = [
   
-    {name:"nitan", surname:"thapa", _id:1, age: 20, gender:"male",email:"nitanthapa425@gmail.com", image : "download.jpg"},
+    {name:"nita", surname:"thapa", _id:1, age: 20, gender:"male",email:"nitanthapa425@gmail.com", image : "download.jpg"},
     {name:"sita", surname:"thapa", _id:2, age: 30, gender:"female",email:"sitathapa425@gmail.com", image : "download.jpg"},
     {name:"rita", surname:"thapa", _id:2, age: 30, gender:"female",email:"ritathapa425@gmail.com", image : "download.jpg"},
     {name:"anusha", surname:"thapa", _id:2, age: 30, gender:"female",email:"anushathapa425@gmail.com", image : "download.jpg"},
@@ -31,7 +36,7 @@ let users = [
 
 {
   product.map((item,i)=>{
-    return(
+    return(  
       <div style = {{border : "solid cyan 2px"}}> 
         <p>product  name is : {item.name} </p>
           <p> product price  is : {item.price} </p>
@@ -61,26 +66,18 @@ return(  <div  style={{border : "solid blue 1px"}}>
 })
 }
 
+<Address></Address>
+<Father name = "oshan" surname = "Baj" age = {1}></Father>
+<Mother></Mother>
+<Information name = "oshan" surname = "Baj" ward = {1} > </Information>
+<p className="success">This is sucessful message</p>
+<p className="error">This is error message</p>
+<p className="warning">This is warning message</p>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div> 
   )
+
+
 }
+
 export default App
